@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@300;400;500;600&family=Overpass:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Overpass:wght@700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --night: #0E0F11;
@@ -35,7 +35,7 @@
       --accent: #2FA871;
       --grey: #8B8B86;
       --border: rgba(244,244,240,0.1);
-      --display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+      --display: 'Archivo', 'Arial Black', sans-serif;
       --body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     }
 
@@ -1226,6 +1226,59 @@
     .footer-links a:hover { color: var(--accent); }
 
     .footer-legal { font-size: 0.68rem; letter-spacing: 0.1em; color: var(--grey); opacity: 0.7; }
+
+    /* ============ ATHLETIC TYPE SYSTEM ============ */
+    /* Display: Archivo expanded black italic */
+    .hero-name, .sec-lede, .svc h3, .pkg h3, .windex-name, .way-step h3, .founder h2, .contact-headline, .trust-list li {
+      font-family: var(--display);
+      font-style: italic;
+      font-stretch: 125%;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+    .hero-name em, .sec-lede em, .founder h2 em { font-style: italic; }
+    .hero-name { font-size: clamp(2.1rem, 7.2vw, 6.4rem); line-height: 0.9; margin-bottom: 1.6rem; }
+    .hero-name .outline { color: transparent; -webkit-text-stroke: 2px #fff; }
+    @supports not (-webkit-text-stroke: 1px #fff) { .hero-name .outline { color: #fff; } }
+    .sec-lede { font-size: clamp(1.6rem, 3.3vw, 2.7rem); line-height: 0.98; max-width: 940px; }
+    .svc h3 { font-size: clamp(1.1rem, 1.55vw, 1.4rem); line-height: 1.05; }
+    .pkg h3 { font-size: clamp(1.45rem, 2vw, 1.8rem); line-height: 1; }
+    .windex-name { font-size: clamp(1.25rem, 2.3vw, 1.85rem); line-height: 1.02; }
+    .way-step h3 { font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.05; }
+    .founder h2 { font-size: clamp(1.7rem, 3.3vw, 2.7rem); line-height: 0.98; }
+    .contact-headline { font-size: clamp(2rem, 4.6vw, 3.8rem); line-height: 0.95; }
+    .trust-list li { font-weight: 800; font-size: clamp(0.95rem, 1.4vw, 1.15rem); letter-spacing: -0.01em; }
+
+    /* Labels, nav, buttons: Archivo semi-expanded bold, no micro-tracking */
+    .nav-links a, .sign-btn, .ghost-btn, .hero-eyebrow, .svc-for, .pkg-kind, .pkg-flag, .windex-meta, .windex-meta .rel,
+    .cs-line b, .trust-label, .contact-label, .dest-caption, .footer-motto, .footer-links a, .inquiry label,
+    .windex-tags span, .windex-stat i, .windex-year, .contact-direct a span, .hero-cap, .founder-photo figcaption,
+    .founder-copy p.founder-sig, .ticker span, .way-note {
+      font-family: var(--body);
+      font-style: normal;
+      font-stretch: 112%;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a { font-size: 0.78rem; color: #b4b4ae; }
+    .sign-btn, .ghost-btn { font-size: 0.76rem; }
+    .sign-btn.big, .ghost-btn.big { font-size: 0.86rem; }
+    .hero-eyebrow { font-size: 0.8rem; }
+    .svc-for, .pkg-kind, .windex-meta, .trust-label, .contact-label, .dest-caption, .footer-motto, .footer-links a { font-size: 0.72rem; }
+    .windex-meta .rel, .pkg-flag, .cs-line b, .inquiry label, .contact-direct a span, .windex-tags span, .windex-stat i, .windex-year { font-size: 0.66rem; }
+    .ticker span { font-style: italic; font-stretch: 125%; font-weight: 900; font-size: 0.8rem; letter-spacing: 0.01em; }
+    .founder-copy p.founder-sig { font-style: italic; font-stretch: 125%; font-weight: 900; font-size: 0.85rem; }
+
+    /* Body copy: regular width, readable weight and contrast */
+    .hero-desc, .sec-sub, .svc p, .pkg-desc, .pkg li, .cs-line, .way-step p, .founder-copy p, .faq details p, .contact-copy > p, .pkg-note {
+      font-family: var(--body);
+      font-stretch: 100%;
+      font-weight: 400;
+    }
+    .sec-sub, .svc p, .pkg-desc, .cs-line, .way-step p, .founder-copy p, .faq details p, .contact-copy > p { color: #b9b9b3; }
+    .faq summary { font-family: var(--body); font-stretch: 112%; font-weight: 700; font-size: 1.02rem; }
+    .windex-stat b { font-family: var(--display); font-style: italic; font-stretch: 125%; font-weight: 900; letter-spacing: -0.02em; }
   </style>
 </head>
 <body>
@@ -1300,7 +1353,7 @@
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="hero-eyebrow">Now booking &middot; NYC &amp; Long Island</p>
-      <h1 class="hero-name">Content that moves<br><em>the game.</em></h1>
+      <h1 class="hero-name">Content that<br><span class="outline">moves</span><br><em>the game.</em></h1>
       <p class="hero-desc">
         Video, photo, and social strategy for <b>brands, teams, leagues, events, and athletes</b> across every sport.
         We shoot it, cut it, and plan where it lives, so your story actually shows up online.
