@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact · Wes Way Creative</title>
-  <meta name="description" content="Start a project with Wes Way Creative. Now booking sports and entertainment video, photo, and social across NYC &amp; Long Island.">
+  <meta name="description" content="Start a project with Wes Way Creative. Sports and entertainment video, photo, and social, based in New York and open to travel.">
   <!-- Link previews (iMessage, Instagram, LinkedIn, X, Slack) -->
   <meta name="theme-color" content="#0E0F11">
   <link rel="canonical" href="https://weswaycreative.com/contact/">
@@ -12,14 +12,14 @@
   <meta property="og:site_name" content="Wes Way Creative">
   <meta property="og:url" content="https://weswaycreative.com/contact/">
   <meta property="og:title" content="Contact · Wes Way Creative">
-  <meta property="og:description" content="Start a project with Wes Way Creative. Now booking sports and entertainment video, photo, and social across NYC &amp; Long Island.">
+  <meta property="og:description" content="Start a project with Wes Way Creative. Sports and entertainment video, photo, and social, based in New York and open to travel.">
   <meta property="og:image" content="https://weswaycreative.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Wes Way Creative: Content that moves the game.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact · Wes Way Creative">
-  <meta name="twitter:description" content="Start a project with Wes Way Creative. Now booking sports and entertainment video, photo, and social across NYC &amp; Long Island.">
+  <meta name="twitter:description" content="Start a project with Wes Way Creative. Sports and entertainment video, photo, and social, based in New York and open to travel.">
   <meta name="twitter:image" content="https://weswaycreative.com/og-image.jpg">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20120%20120%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%22116%22%20height%3D%22116%22%20rx%3D%2216%22%20fill%3D%22%2300693E%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%229%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.5%22/%3E%3Cg%20transform%3D%22translate%2810.6%2C5.5%29%22%20fill%3D%22%23fff%22%3E%3Cpolyline%20points%3D%2213%2C24%2031%2C80%2049%2C36%2067%2C80%2083%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2213%22%20stroke-linecap%3D%22square%22%20stroke-linejoin%3D%22miter%22/%3E%3Cg%20transform%3D%22translate%2886%2C20%29%20rotate%2816.7%29%22%3E%3Cpolygon%20points%3D%220%2C-10%2012%2C12%20-12%2C12%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -1391,6 +1391,17 @@
     .page-title { font-family: var(--display); font-style: italic; font-stretch: 125%; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; font-size: clamp(2.6rem, 7vw, 6rem); margin-bottom: 1.2rem; }
     .page-title em { color: var(--accent); font-style: italic; }
     .page-head .sec-sub { margin-bottom: 0; }
+    .page-head.has-bg { position: relative; isolation: isolate; min-height: 72vh; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 4rem; overflow: hidden; }
+    .page-head.has-bg::before { content: ""; position: absolute; inset: 0; z-index: -2; background: var(--bg) var(--pos) / cover no-repeat; }
+    .page-head.has-bg::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(14,15,17,.55) 0%, rgba(14,15,17,.15) 35%, rgba(14,15,17,.6) 70%, rgba(14,15,17,1) 100%), linear-gradient(90deg, rgba(14,15,17,.7), rgba(14,15,17,0) 70%); }
+    .page-head.has-bg .sec-sub { color: rgba(244,244,240,.88); }
+    .page-head.has-bg { border-bottom: 0; }
+    .page-head.has-bg + section { padding-top: 2.5rem; }
+    .page-head.has-bg .page-kicker { display: none; }
+    .page-head.has-bg::before { -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+    .page-head .ph-sign { position: absolute; top: 9.5rem; right: 2.5rem; background: var(--green); border-radius: 8px; box-shadow: inset 0 0 0 3px var(--green), inset 0 0 0 5px #fff; padding: .6rem 1rem .5rem; font-family: 'Overpass', sans-serif; font-weight: 800; font-size: .7rem; letter-spacing: .2em; color: #fff; text-transform: uppercase; display: flex; align-items: center; gap: .55rem; }
+    .page-head .ph-sign svg { width: 22px; height: 22px; }
+    @media (max-width: 600px) { .page-head.has-bg { min-height: 62vh; padding-bottom: 2.5rem; } .page-head .ph-sign { top: 7.5rem; right: 1rem; } }
     .page-first { padding-top: 10rem; }
     @media (max-width: 600px) { .page-head { padding: 8.5rem 1rem 2rem; } .page-first { padding-top: 8rem; } }
 
@@ -1465,7 +1476,7 @@
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
       <div class="nav-links">
         <a href="/">Home</a>
-        <a href="/work/">Work</a>
+        <a href="/experiences/">Experiences</a>
         <a href="/services/">Services</a>
         <a href="/about/">About</a>
         <a href="/contact/" aria-current="page">Contact</a>
@@ -1483,7 +1494,7 @@
       <span>Photography</span><span class="dot" aria-hidden="true"></span>
       <span>Social Strategy</span><span class="dot" aria-hidden="true"></span>
       <span>Monthly Retainers</span><span class="dot" aria-hidden="true"></span>
-      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot" aria-hidden="true"></span>
+      <span>New York Based &middot; Available Anywhere</span><span class="dot" aria-hidden="true"></span>
       <span>One Way. Wes Way.</span><span class="dot" aria-hidden="true"></span>
       <span>Game Coverage</span><span class="dot" aria-hidden="true"></span>
       <span>Highlight Reels</span><span class="dot" aria-hidden="true"></span>
@@ -1492,23 +1503,30 @@
       <span>Photography</span><span class="dot" aria-hidden="true"></span>
       <span>Social Strategy</span><span class="dot" aria-hidden="true"></span>
       <span>Monthly Retainers</span><span class="dot" aria-hidden="true"></span>
-      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot" aria-hidden="true"></span>
+      <span>New York Based &middot; Available Anywhere</span><span class="dot" aria-hidden="true"></span>
     </div>
   </div>
 </header>
 
 
+<!-- ============ PAGE HEAD ============ -->
+<section class="page-head has-bg" style="--bg:url(/banner-contact.jpg);--pos:50% 35%"><span class="ph-sign"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#w-arrow"/></svg>Contact</span>
+  <p class="page-kicker">Contact</p>
+  <h1 class="page-title">Let&rsquo;s <em>talk.</em></h1>
+  <p class="sec-sub">Questions, quotes, or ideas. Start here.</p>
+</section>
+
 <!-- ============ CONTACT ============ -->
-<section class="contact-section page-first" id="contact">
+<section class="contact-section" id="contact">
   <div class="contact-grid">
     <div class="contact-copy">
       <div class="exit-sign">
         <span class="exit-no">Last Exit</span>
-        <span class="exit-name">Let's Work</span>
+        <span class="exit-name">Inquiry</span>
       </div>
-      <p class="contact-label">Now booking &middot; NYC &amp; Long Island</p>
-      <h2 class="contact-headline">Tell us what you're building.</h2>
-      <p>Share a few details and we'll get back to you to set up a discovery call. Prefer to reach out directly? That works too.</p>
+      <p class="contact-label">Based in New York &middot; Open to travel</p>
+      <h2 class="contact-headline">Tell us about your project.</h2>
+      <p>Fill out the form and you'll hear back within a couple of days. You can also reach out directly.</p>
       <div class="contact-direct">
         <a href="mailto:info@weswaycreative.com"><span>Email</span>info@weswaycreative.com</a>
         <a href="tel:5169418117"><span>Phone</span>(516) 941-8117</a>
@@ -1561,23 +1579,31 @@
   <div class="faq">
     <details>
       <summary>Who do you work with?</summary>
-      <p>Anyone in sports and entertainment: brands, pro and amateur teams, leagues, artists and talent, live events, training facilities, and individual athletes. If your world is the game or the stage, we're a fit.</p>
+      <p>Anyone in sports and entertainment: brands, teams at every level, leagues, artists, performers, live events, training facilities, and individual athletes.</p>
     </details>
     <details>
       <summary>Where are you based? Do you travel?</summary>
-      <p>We're based in New York City and cover NYC and Long Island regularly. Travel is on the table for the right project.</p>
+      <p>Wes Way is based in New York and works across the city and Long Island regularly. Projects outside New York are welcome too, and travel costs are included in your quote so there are no surprises.</p>
+    </details>
+    <details>
+      <summary>What's the difference between a single shoot and a monthly retainer?</summary>
+      <p>A <b>single shoot</b> is a one-time booking: one game, one event, or one session, with the edited content delivered after.<br><br>A <b>monthly retainer</b> is an ongoing agreement. You pay one set amount each month, and in return you get a set number of shoot days and deliverables (for example, two game days, four highlight videos, and a batch of graphics). Because the work is booked together in advance, each shoot costs less than it would on its own, and you get consistent content without re-booking every time.</p>
+    </details>
+    <details>
+      <summary>Which option is right for me?</summary>
+      <p>If you have a single event or want to test things out, start with a single shoot. If you need content every week or every month (a season, a tour, a gym, a program), a retainer usually saves money and keeps your pages active. A brand film is best for a bigger, one-time story like a launch, a recruiting video, or an introduction.</p>
     </details>
     <details>
       <summary>How does pricing work?</summary>
-      <p>Every quote is built around what you need: how many shoot days, how many teams, and what gets delivered. Retainers are bundled, so they cost less per shoot than booking one at a time. We also build packages for tighter budgets.</p>
+      <p>Every quote is custom. It depends on how many shoot days you need, how much gets delivered, and whether it's one-time or ongoing. After a short call, you get a clear written quote before anything is booked. Smaller budgets are welcome, and packages can be scaled to fit.</p>
     </details>
     <details>
-      <summary>What do you need from us to get started?</summary>
-      <p>Your schedule, access to the games or sessions, and a quick call about what you want people to see. We handle the rest.</p>
+      <summary>What do I actually receive?</summary>
+      <p>Finished content that's ready to post: edited videos sized for Instagram, TikTok, and other platforms, plus photo galleries and graphics if they're part of your package. Retainer clients can also get a content calendar and help posting.</p>
     </details>
     <details>
-      <summary>Do you post the content for us?</summary>
-      <p>We can. Every package comes with files ready to post. Retainer clients can add content calendars, captions, and posting on their accounts.</p>
+      <summary>What do you need from me to get started?</summary>
+      <p>Your schedule, access to the games, shows, or sessions, and a quick call about your goals. Everything else is handled from there.</p>
     </details>
   </div>
 </section>
@@ -1593,7 +1619,7 @@
   <p class="footer-motto">Video, photo &amp; social strategy for <b>sports &amp; entertainment</b>.</p>
   <div class="footer-links">
     <a href="/">Home</a>
-    <a href="/work/">Work</a>
+    <a href="/experiences/">Experiences</a>
     <a href="/services/">Services</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>

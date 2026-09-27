@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About · Wes Way Creative</title>
-  <meta name="description" content="Meet Jamien Petty, founder of Wes Way Creative: a New York producer and storyteller building a studio for sports and entertainment.">
+  <meta name="description" content="Meet Jamien Petty, founder of Wes Way Creative: a New York producer and storyteller building a company for sports and entertainment.">
   <!-- Link previews (iMessage, Instagram, LinkedIn, X, Slack) -->
   <meta name="theme-color" content="#0E0F11">
   <link rel="canonical" href="https://weswaycreative.com/about/">
@@ -12,14 +12,14 @@
   <meta property="og:site_name" content="Wes Way Creative">
   <meta property="og:url" content="https://weswaycreative.com/about/">
   <meta property="og:title" content="About · Wes Way Creative">
-  <meta property="og:description" content="Meet Jamien Petty, founder of Wes Way Creative: a New York producer and storyteller building a studio for sports and entertainment.">
+  <meta property="og:description" content="Meet Jamien Petty, founder of Wes Way Creative: a New York producer and storyteller building a company for sports and entertainment.">
   <meta property="og:image" content="https://weswaycreative.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Wes Way Creative: Content that moves the game.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About · Wes Way Creative">
-  <meta name="twitter:description" content="Meet Jamien Petty, founder of Wes Way Creative: a New York producer and storyteller building a studio for sports and entertainment.">
+  <meta name="twitter:description" content="Meet Jamien Petty, founder of Wes Way Creative: a New York producer and storyteller building a company for sports and entertainment.">
   <meta name="twitter:image" content="https://weswaycreative.com/og-image.jpg">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20120%20120%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%22116%22%20height%3D%22116%22%20rx%3D%2216%22%20fill%3D%22%2300693E%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%229%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.5%22/%3E%3Cg%20transform%3D%22translate%2810.6%2C5.5%29%22%20fill%3D%22%23fff%22%3E%3Cpolyline%20points%3D%2213%2C24%2031%2C80%2049%2C36%2067%2C80%2083%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2213%22%20stroke-linecap%3D%22square%22%20stroke-linejoin%3D%22miter%22/%3E%3Cg%20transform%3D%22translate%2886%2C20%29%20rotate%2816.7%29%22%3E%3Cpolygon%20points%3D%220%2C-10%2012%2C12%20-12%2C12%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -1391,6 +1391,17 @@
     .page-title { font-family: var(--display); font-style: italic; font-stretch: 125%; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; font-size: clamp(2.6rem, 7vw, 6rem); margin-bottom: 1.2rem; }
     .page-title em { color: var(--accent); font-style: italic; }
     .page-head .sec-sub { margin-bottom: 0; }
+    .page-head.has-bg { position: relative; isolation: isolate; min-height: 72vh; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 4rem; overflow: hidden; }
+    .page-head.has-bg::before { content: ""; position: absolute; inset: 0; z-index: -2; background: var(--bg) var(--pos) / cover no-repeat; }
+    .page-head.has-bg::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(14,15,17,.55) 0%, rgba(14,15,17,.15) 35%, rgba(14,15,17,.6) 70%, rgba(14,15,17,1) 100%), linear-gradient(90deg, rgba(14,15,17,.7), rgba(14,15,17,0) 70%); }
+    .page-head.has-bg .sec-sub { color: rgba(244,244,240,.88); }
+    .page-head.has-bg { border-bottom: 0; }
+    .page-head.has-bg + section { padding-top: 2.5rem; }
+    .page-head.has-bg .page-kicker { display: none; }
+    .page-head.has-bg::before { -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+    .page-head .ph-sign { position: absolute; top: 9.5rem; right: 2.5rem; background: var(--green); border-radius: 8px; box-shadow: inset 0 0 0 3px var(--green), inset 0 0 0 5px #fff; padding: .6rem 1rem .5rem; font-family: 'Overpass', sans-serif; font-weight: 800; font-size: .7rem; letter-spacing: .2em; color: #fff; text-transform: uppercase; display: flex; align-items: center; gap: .55rem; }
+    .page-head .ph-sign svg { width: 22px; height: 22px; }
+    @media (max-width: 600px) { .page-head.has-bg { min-height: 62vh; padding-bottom: 2.5rem; } .page-head .ph-sign { top: 7.5rem; right: 1rem; } }
     .page-first { padding-top: 10rem; }
     @media (max-width: 600px) { .page-head { padding: 8.5rem 1rem 2rem; } .page-first { padding-top: 8rem; } }
 
@@ -1465,7 +1476,7 @@
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
       <div class="nav-links">
         <a href="/">Home</a>
-        <a href="/work/">Work</a>
+        <a href="/experiences/">Experiences</a>
         <a href="/services/">Services</a>
         <a href="/about/" aria-current="page">About</a>
         <a href="/contact/">Contact</a>
@@ -1483,7 +1494,7 @@
       <span>Photography</span><span class="dot" aria-hidden="true"></span>
       <span>Social Strategy</span><span class="dot" aria-hidden="true"></span>
       <span>Monthly Retainers</span><span class="dot" aria-hidden="true"></span>
-      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot" aria-hidden="true"></span>
+      <span>New York Based &middot; Available Anywhere</span><span class="dot" aria-hidden="true"></span>
       <span>One Way. Wes Way.</span><span class="dot" aria-hidden="true"></span>
       <span>Game Coverage</span><span class="dot" aria-hidden="true"></span>
       <span>Highlight Reels</span><span class="dot" aria-hidden="true"></span>
@@ -1492,14 +1503,14 @@
       <span>Photography</span><span class="dot" aria-hidden="true"></span>
       <span>Social Strategy</span><span class="dot" aria-hidden="true"></span>
       <span>Monthly Retainers</span><span class="dot" aria-hidden="true"></span>
-      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot" aria-hidden="true"></span>
+      <span>New York Based &middot; Available Anywhere</span><span class="dot" aria-hidden="true"></span>
     </div>
   </div>
 </header>
 
 
 <!-- ============ PAGE HEAD ============ -->
-<section class="page-head">
+<section class="page-head has-bg" style="--bg:url(/banner-about.jpg);--pos:70% 30%"><span class="ph-sign"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#w-arrow"/></svg>About</span>
   <p class="page-kicker">About</p>
   <h1 class="page-title">Behind the <em>wheel.</em></h1>
   <p class="sec-sub">Est. 2026 &middot; Building on freelance work since 2021.</p>
@@ -1509,7 +1520,7 @@
 <section id="about">
   <div class="exit-sign">
     <span class="exit-no">Exit 01</span>
-    <span class="exit-name">Behind The Wheel</span>
+    <span class="exit-name">The Founder</span>
   </div>
   <div class="founder">
     <figure class="founder-photo">
@@ -1520,9 +1531,8 @@
     <div class="founder-copy">
       <h2>A storyteller <em>first.</em></h2>
       <p class="founder-lead">I'm Jamien Petty, a New York producer and Syracuse Newhouse grad. The camera is just how I tell the story.</p>
-      <p>Before the sidelines and the stadiums, it was me in the backseat, vlogging every car ride like somebody was watching. I didn't know it yet, but I was already on the road to this.</p>
-      <p>For the last four years I've told stories at the collegiate and professional level: on the sidelines for Syracuse Athletics, in MLB stadiums with the Players Association, and on the floor at Fanatics Fest. I've seen what a full content team can do for a brand, and how out of reach that level feels for everyone who doesn't have one.</p>
-      <p>That's why I started Wes Way. Every team, artist, and brand deserves content with that same prestige, without having to hire a full-time team to get it. You bring the story. We'll make sure people feel it.</p>
+      <p>For the last four years I've told stories at the collegiate and professional level: on the sidelines for Syracuse Athletics, in MLB stadiums with the Players Association, and on the floor at Fanatics Fest. I've seen what a dedicated content team can do, and how hard that is to get without one.</p>
+      <p>That's why I started Wes Way: to bring that same level of work to teams, artists, and brands without them needing to hire a full-time staff.</p>
       <p class="founder-sig">One Way. Wes Way.<span>Jamien Petty, Founder &middot; Est. 2026, building on freelance work since 2021</span></p>
     </div>
   </div>
@@ -1532,8 +1542,8 @@
 <section class="cta-band">
   <div class="cta-inner">
     <div>
-      <p class="contact-label">Now booking &middot; NYC &amp; Long Island</p>
-      <h2 class="cta-title">Got something worth <em>watching?</em></h2>
+      <p class="contact-label">Based in New York &middot; Open to travel</p>
+      <h2 class="cta-title">Ready when <em>you are.</em></h2>
     </div>
     <div class="cta-actions">
       <a href="/contact/" class="sign-btn big">Start a Project</a>
@@ -1553,7 +1563,7 @@
   <p class="footer-motto">Video, photo &amp; social strategy for <b>sports &amp; entertainment</b>.</p>
   <div class="footer-links">
     <a href="/">Home</a>
-    <a href="/work/">Work</a>
+    <a href="/experiences/">Experiences</a>
     <a href="/services/">Services</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>

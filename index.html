@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wes Way Creative · Sports &amp; Entertainment Video, Photo &amp; Social · New York</title>
-  <meta name="description" content="Wes Way Creative is a New York studio making video, photo, and social content for sports and entertainment: brands, teams, leagues, artists, talent, and live events. Game and event coverage, athlete and talent content, brand films, and monthly retainers. 5.9M+ career views.">
+  <meta name="description" content="Wes Way Creative makes video, photo, and social content for sports and entertainment: brands, teams, leagues, artists, talent, and live events. Game and event coverage, athlete and talent content, brand films, and monthly retainers. 5.9M+ career views.">
   <!-- Link previews (iMessage, Instagram, LinkedIn, X, Slack) -->
   <meta name="theme-color" content="#0E0F11">
   <link rel="canonical" href="https://weswaycreative.com/">
@@ -1391,6 +1391,17 @@
     .page-title { font-family: var(--display); font-style: italic; font-stretch: 125%; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; font-size: clamp(2.6rem, 7vw, 6rem); margin-bottom: 1.2rem; }
     .page-title em { color: var(--accent); font-style: italic; }
     .page-head .sec-sub { margin-bottom: 0; }
+    .page-head.has-bg { position: relative; isolation: isolate; min-height: 72vh; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 4rem; overflow: hidden; }
+    .page-head.has-bg::before { content: ""; position: absolute; inset: 0; z-index: -2; background: var(--bg) var(--pos) / cover no-repeat; }
+    .page-head.has-bg::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(14,15,17,.55) 0%, rgba(14,15,17,.15) 35%, rgba(14,15,17,.6) 70%, rgba(14,15,17,1) 100%), linear-gradient(90deg, rgba(14,15,17,.7), rgba(14,15,17,0) 70%); }
+    .page-head.has-bg .sec-sub { color: rgba(244,244,240,.88); }
+    .page-head.has-bg { border-bottom: 0; }
+    .page-head.has-bg + section { padding-top: 2.5rem; }
+    .page-head.has-bg .page-kicker { display: none; }
+    .page-head.has-bg::before { -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+    .page-head .ph-sign { position: absolute; top: 9.5rem; right: 2.5rem; background: var(--green); border-radius: 8px; box-shadow: inset 0 0 0 3px var(--green), inset 0 0 0 5px #fff; padding: .6rem 1rem .5rem; font-family: 'Overpass', sans-serif; font-weight: 800; font-size: .7rem; letter-spacing: .2em; color: #fff; text-transform: uppercase; display: flex; align-items: center; gap: .55rem; }
+    .page-head .ph-sign svg { width: 22px; height: 22px; }
+    @media (max-width: 600px) { .page-head.has-bg { min-height: 62vh; padding-bottom: 2.5rem; } .page-head .ph-sign { top: 7.5rem; right: 1rem; } }
     .page-first { padding-top: 10rem; }
     @media (max-width: 600px) { .page-head { padding: 8.5rem 1rem 2rem; } .page-first { padding-top: 8rem; } }
 
@@ -1465,7 +1476,7 @@
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
       <div class="nav-links">
         <a href="/" aria-current="page">Home</a>
-        <a href="/work/">Work</a>
+        <a href="/experiences/">Experiences</a>
         <a href="/services/">Services</a>
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
@@ -1483,7 +1494,7 @@
       <span>Photography</span><span class="dot" aria-hidden="true"></span>
       <span>Social Strategy</span><span class="dot" aria-hidden="true"></span>
       <span>Monthly Retainers</span><span class="dot" aria-hidden="true"></span>
-      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot" aria-hidden="true"></span>
+      <span>New York Based &middot; Available Anywhere</span><span class="dot" aria-hidden="true"></span>
       <span>One Way. Wes Way.</span><span class="dot" aria-hidden="true"></span>
       <span>Game Coverage</span><span class="dot" aria-hidden="true"></span>
       <span>Highlight Reels</span><span class="dot" aria-hidden="true"></span>
@@ -1492,7 +1503,7 @@
       <span>Photography</span><span class="dot" aria-hidden="true"></span>
       <span>Social Strategy</span><span class="dot" aria-hidden="true"></span>
       <span>Monthly Retainers</span><span class="dot" aria-hidden="true"></span>
-      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot" aria-hidden="true"></span>
+      <span>New York Based &middot; Available Anywhere</span><span class="dot" aria-hidden="true"></span>
     </div>
   </div>
 </header>
@@ -1508,15 +1519,14 @@
   </div>
   <div class="hero-inner">
     <div class="hero-copy">
-      <p class="hero-eyebrow">Now booking &middot; NYC &amp; Long Island</p>
+      <p class="hero-eyebrow">Now booking &middot; New York &amp; beyond</p>
       <h1 class="hero-name">Content that<br><span class="outline">moves</span><br><em>the game.</em></h1>
       <p class="hero-desc">
-        Video, photo, and social strategy for <b>sports and entertainment</b>: brands, teams, leagues, artists, talent, and the live events where it all happens.
-        We shoot it, cut it, and plan where it lives, so your story actually shows up online.
+        Video, photo, and social strategy for <b>sports and entertainment</b>. We shoot it, cut it, and plan where it lives, so your story reaches the right audiences.
       </p>
       <div class="hero-ctas">
         <a href="/contact/" class="sign-btn big">Book a Discovery Call</a>
-        <a href="/work/" class="ghost-btn big">See the Work</a>
+        <a href="/experiences/" class="ghost-btn big">See the Work</a>
       </div>
     </div>
     <div class="stats-block">
@@ -1533,11 +1543,11 @@
 <!-- ============ WHAT IS WES WAY ============ -->
 <section class="intro" id="what">
   <div class="intro-grid">
-    <h2 class="sec-lede">A studio built for the game <em>and the stage.</em></h2>
+    <h2 class="sec-lede">From the sideline <em>to the stage.</em></h2>
     <div class="intro-copy">
-      <p>Wes Way Creative is a video, photo, and social studio for sports and entertainment, founded by Jamien Petty. We shoot it, cut it, and plan where it lives, so brands, teams, artists, and athletes show up online the way they deserve to.</p>
+      <p>Founded by Jamien Petty, Wes Way Creative brings big-league content to teams, brands, artists, and athletes, without the need for a full-time content staff. Based in New York and ready to travel.</p>
       <div class="intro-links">
-        <a href="/work/" class="ghost-btn">See the work</a>
+        <a href="/experiences/" class="ghost-btn">Experiences</a>
         <a href="/services/" class="ghost-btn">Our services</a>
       </div>
     </div>
@@ -1630,13 +1640,13 @@
     <a class="svc svc-link" href="/services/#services">
       <span class="svc-num">01</span>
       <h3>Games, Events &amp; Live Shows</h3>
-      <p>Games, fan fests, concerts, and activations turned into highlights and recaps while the moment is still hot.</p>
+      <p>Coverage for live moments across sports and entertainment, from game day to showtime.</p>
       <span class="svc-for">Learn more</span>
     </a>
     <a class="svc svc-link" href="/services/#services">
       <span class="svc-num">02</span>
       <h3>Athlete &amp; Talent Content</h3>
-      <p>Behind-the-scenes, mic'd up, and on-camera moments that build a personal brand and give fans a reason to follow.</p>
+      <p>Behind-the-scenes and on-camera content that helps athletes and artists grow their personal brand.</p>
       <span class="svc-for">Learn more</span>
     </a>
     <a class="svc svc-link" href="/services/#packages">
@@ -1655,7 +1665,7 @@
     <div class="ft-copy">
       <p class="ft-kicker">Meet the founder</p>
       <h2>A storyteller <em>first.</em></h2>
-      <p>From backseat car vlogs to Fanatics Fest, here's how Wes Way got its start.</p>
+      <p>Syracuse grad, New York producer, and the founder behind Wes Way. Here's his story.</p>
       <span class="sign-btn">Read the story</span>
     </div>
   </a>
@@ -1665,8 +1675,8 @@
 <section class="cta-band">
   <div class="cta-inner">
     <div>
-      <p class="contact-label">Now booking &middot; NYC &amp; Long Island</p>
-      <h2 class="cta-title">Got something worth <em>watching?</em></h2>
+      <p class="contact-label">Based in New York &middot; Open to travel</p>
+      <h2 class="cta-title">Ready when <em>you are.</em></h2>
     </div>
     <div class="cta-actions">
       <a href="/contact/" class="sign-btn big">Start a Project</a>
@@ -1686,7 +1696,7 @@
   <p class="footer-motto">Video, photo &amp; social strategy for <b>sports &amp; entertainment</b>.</p>
   <div class="footer-links">
     <a href="/">Home</a>
-    <a href="/work/">Work</a>
+    <a href="/experiences/">Experiences</a>
     <a href="/services/">Services</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
