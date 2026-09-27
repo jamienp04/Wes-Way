@@ -1369,16 +1369,9 @@
     /* Est. line */
     .footer-est { font-family: var(--body); font-stretch: 112%; font-weight: 700; font-size: 0.72rem; color: var(--chalk); letter-spacing: 0.02em; text-transform: uppercase; }
 
-    /* Gallery captions */
-    .photo-item { position: relative; }
-    .photo-cap {
-      position: absolute; left: 8px; bottom: 8px; right: 8px; width: fit-content; max-width: calc(100% - 16px);
-      padding: 0.35rem 0.55rem 0.3rem; border-radius: 4px; background: rgba(14,15,17,0.82);
-      font-family: var(--body); font-stretch: 112%; font-weight: 700; font-size: 0.64rem; letter-spacing: 0.02em;
-      text-transform: uppercase; color: var(--chalk); opacity: 0; transform: translateY(4px); transition: opacity .25s, transform .25s;
-    }
-    .photo-item:hover .photo-cap { opacity: 1; transform: none; }
-    @media (hover: none) { .photo-cap { opacity: 1; transform: none; font-size: 0.56rem; } }
+
+    .photo-note { padding: 0 2.5rem 1.6rem; margin-top: -0.6rem; max-width: 760px; font-family: var(--body); font-size: 0.92rem; line-height: 1.6; color: #b9b9b3; }
+    @media (max-width: 600px) { .photo-note { padding: 0 1rem 1.2rem; font-size: 0.85rem; } }
   </style>
 </head>
 <body>
@@ -1786,22 +1779,23 @@
     </div>
     <a href="https://www.instagram.com/wwaycreative/" target="_blank" rel="noopener" class="sign-btn">@wwaycreative &#8599;</a>
   </div>
+  <p class="photo-note">Shot by founder Jamien Petty before Wes Way Creative, while working in-house and freelance.</p>
   <div class="photo-grid">
-    <div class="photo-item"><img src="eybl-1.jpg" alt="Nike EYBL - athlete tossing basketball at Jordan Brand World of Flight" loading="lazy"><span class="photo-cap">Nike EYBL &middot; Jordan Brand World of Flight &middot; Freelance</span></div>
-    <div class="photo-item"><img src="mlbpa-1.jpg" alt="MLBPA - MLB player holding signed baseball at Citi Field" loading="lazy"><span class="photo-cap">MLBPA &middot; Citi Field &middot; Internship</span></div>
-    <div class="photo-item"><img src="eybl-2.jpg" alt="Sports photography - NBA player taking selfie with young fans" loading="lazy"><span class="photo-cap">Sports photography</span></div>
-    <div class="photo-item"><img src="eybl-4.jpg" alt="Nike - Air Jordan 4s in foreground with athlete behind" loading="lazy"><span class="photo-cap">Nike EYBL &middot; Jordan Brand World of Flight &middot; Freelance</span></div>
-    <div class="photo-item"><img src="eybl-3.jpg" alt="Editorial portrait - athlete seated at Jordan Brand event" loading="lazy"><span class="photo-cap">Nike EYBL &middot; Jordan Brand World of Flight &middot; Freelance</span></div>
-    <div class="photo-item"><img src="mlbpa-2.jpg" alt="MLBPA - MLB player holding gift box with Mets logo behind" loading="lazy"><span class="photo-cap">MLBPA &middot; Citi Field &middot; Internship</span></div>
-    <div class="photo-item"><img src="mlbpa-3.jpg" alt="MLBPA - candid conversation on field at Citi Field" loading="lazy"><span class="photo-cap">MLBPA &middot; Citi Field &middot; Internship</span></div>
-    <div class="photo-item"><img src="concert-1.jpg" alt="Concert photography - performer raising hand with dramatic stage lighting" loading="lazy"><span class="photo-cap">Concert photography</span></div>
-    <div class="photo-item"><img src="concert-2.jpg" alt="Concert photography - artist performing between stage trusses" loading="lazy"><span class="photo-cap">Concert photography</span></div>
-    <div class="photo-item"><img src="concert-3.jpg" alt="Concert photography - artist in profile with purple stage lighting" loading="lazy"><span class="photo-cap">Concert photography</span></div>
-    <div class="photo-item"><img src="event-1.jpg" alt="Event photography - wide establishing shot of packed networking venue" loading="lazy"><span class="photo-cap">Event photography</span></div>
-    <div class="photo-item"><img src="concert-4.jpg" alt="Concert photography - wide stage shot with blue lighting" loading="lazy"><span class="photo-cap">Concert photography</span></div>
-    <div class="photo-item"><img src="event-2.jpg" alt="Event photography - networking at upscale venue with warm pendant lighting" loading="lazy"><span class="photo-cap">Event photography</span></div>
-    <div class="photo-item"><img src="event-3.jpg" alt="Event photography - rooftop networking event at golden hour" loading="lazy"><span class="photo-cap">Event photography</span></div>
-    <div class="photo-item"><img src="event-4.jpg" alt="Event photography - candid laugh at hospitality event" loading="lazy"><span class="photo-cap">Event photography</span></div>
+    <div class="photo-item"><img src="eybl-1.jpg" alt="Nike EYBL - athlete tossing basketball at Jordan Brand World of Flight" loading="lazy"></div>
+    <div class="photo-item"><img src="mlbpa-1.jpg" alt="MLBPA - MLB player holding signed baseball at Citi Field" loading="lazy"></div>
+    <div class="photo-item"><img src="eybl-2.jpg" alt="Sports photography - NBA player taking selfie with young fans" loading="lazy"></div>
+    <div class="photo-item"><img src="eybl-4.jpg" alt="Nike - Air Jordan 4s in foreground with athlete behind" loading="lazy"></div>
+    <div class="photo-item"><img src="eybl-3.jpg" alt="Editorial portrait - athlete seated at Jordan Brand event" loading="lazy"></div>
+    <div class="photo-item"><img src="mlbpa-2.jpg" alt="MLBPA - MLB player holding gift box with Mets logo behind" loading="lazy"></div>
+    <div class="photo-item"><img src="mlbpa-3.jpg" alt="MLBPA - candid conversation on field at Citi Field" loading="lazy"></div>
+    <div class="photo-item"><img src="concert-1.jpg" alt="Concert photography - performer raising hand with dramatic stage lighting" loading="lazy"></div>
+    <div class="photo-item"><img src="concert-2.jpg" alt="Concert photography - artist performing between stage trusses" loading="lazy"></div>
+    <div class="photo-item"><img src="concert-3.jpg" alt="Concert photography - artist in profile with purple stage lighting" loading="lazy"></div>
+    <div class="photo-item"><img src="event-1.jpg" alt="Event photography - wide establishing shot of packed networking venue" loading="lazy"></div>
+    <div class="photo-item"><img src="concert-4.jpg" alt="Concert photography - wide stage shot with blue lighting" loading="lazy"></div>
+    <div class="photo-item"><img src="event-2.jpg" alt="Event photography - networking at upscale venue with warm pendant lighting" loading="lazy"></div>
+    <div class="photo-item"><img src="event-3.jpg" alt="Event photography - rooftop networking event at golden hour" loading="lazy"></div>
+    <div class="photo-item"><img src="event-4.jpg" alt="Event photography - candid laugh at hospitality event" loading="lazy"></div>
   </div>
 </section>
 
