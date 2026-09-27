@@ -1344,8 +1344,30 @@
       .xp-card.is-open .xp-front { transform: translateY(-100%); opacity: 0; } .xp-card.is-open .xp-back { transform: translateY(0); } }
     @media (max-width: 900px) { .xp-grid { grid-template-columns: repeat(2, 1fr); } .xp-card:last-child { grid-column: span 2; } }
     @media (max-width: 600px) { .xp-name { font-size: 1.05rem; font-stretch: 100%; } .xp-stat b { font-size: 1.35rem; } }
-    @media (max-width: 600px) { .xp { padding: 3rem 1rem; } .xp-card { height: 128px; } .xp-front, .xp-back { padding: 1rem; } .xp-desc { font-size: 0.72rem; } .xp-what { font-size: 0.76rem; } }
+    @media (max-width: 600px) { .xp { padding: 3rem 1rem; } .xp-card { height: 168px; } .xp-front, .xp-back { padding: 1rem; } .xp-desc { font-size: 0.72rem; } .xp-what { font-size: 0.74rem; line-height: 1.35; } }
     @media (max-width: 340px) { .xp-grid { grid-template-columns: 1fr; } .xp-card:last-child { grid-column: auto; } }
+
+    /* ============ RECENT WORK ============ */
+    .rw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 1100px; }
+    .rw-card { position: relative; display: block; aspect-ratio: 9 / 16; border-radius: 10px; overflow: hidden; background: var(--night-2); border: 1px solid var(--border); }
+    .rw-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .rw-card video::-webkit-media-controls, .rw-card video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
+    .rw-go {
+      position: absolute; left: 12px; bottom: 12px; padding: 0.45rem 0.7rem 0.35rem; border-radius: 5px;
+      background: rgba(14,15,17,0.78); color: var(--chalk); font-family: var(--body); font-stretch: 112%; font-weight: 700;
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.02em; opacity: 0; transform: translateY(6px); transition: opacity .25s, transform .25s;
+    }
+    .rw-card:hover .rw-go, .rw-card:focus-visible .rw-go { opacity: 1; transform: none; }
+    @media (hover: none) { .rw-go { opacity: 1; transform: none; } }
+    .rw-card.is-missing { display: none; }
+    .rw-section.is-empty { display: none; }
+    @media (max-width: 700px) {
+      .rw-grid { grid-template-columns: repeat(3, 72%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 0.5rem; }
+      .rw-card { scroll-snap-align: start; }
+    }
+
+    /* Est. line */
+    .footer-est { font-family: var(--body); font-stretch: 112%; font-weight: 700; font-size: 0.72rem; color: var(--chalk); letter-spacing: 0.02em; text-transform: uppercase; }
   </style>
 </head>
 <body>
@@ -1409,12 +1431,11 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<!-- Background video: hero-2026.mp4 must sit next to this file in the repo.
+<!-- Background video: hero-2026.mp4 and hero-still.jpg must sit next to this file in the repo.
      If it's missing or can't play, the page falls back to the YouTube reel. -->
 <section class="hero">
-  <div class="hero-media" id="heroMedia" aria-hidden="true" style="background-image:url(poster.jpg)">
-    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback>
-      <source src="hero-2026.mp4" type="video/mp4">
+  <div class="hero-media" id="heroMedia" aria-hidden="true" style="background-image:url(hero-still.jpg)">
+    <video id="heroVideo" src="hero-2026.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback>
     </video>
   </div>
   <div class="hero-inner">
@@ -1447,39 +1468,39 @@
   <div class="xp-grid">
     <button class="xp-card" type="button" aria-expanded="false">
       <span class="xp-front"><span class="xp-name">MLBPA</span><span class="xp-desc">MLB Players Association</span></span>
-      <span class="xp-back"><span class="xp-rel">In-House</span><span class="xp-stat"><b>318K+</b> views</span><span class="xp-what">Player interviews &amp; short-form at MLB stadiums</span></span>
+      <span class="xp-back"><span class="xp-rel">In-House</span><span class="xp-stat"><b>318K+</b> views</span><span class="xp-what">Created athlete-focused content and graphics for MLB &amp; MiLB players, including an on-site player interview. 17+ posts across Instagram &amp; X in one summer.</span></span>
     </button>
     <button class="xp-card" type="button" aria-expanded="false">
       <span class="xp-front"><span class="xp-name">Fanatics</span><span class="xp-desc">Fanatics Fest NYC</span></span>
-      <span class="xp-back"><span class="xp-rel">Contract</span><span class="xp-stat"><b>2M+</b> views</span><span class="xp-what">Event content at the Javits Center</span></span>
+      <span class="xp-back"><span class="xp-rel">Contract</span><span class="xp-stat"><b>2M+</b> views</span><span class="xp-what">Shot iPhone &amp; Sony A7S III event content at Fanatics Fest NYC. One video passed 2M views on its own.</span></span>
     </button>
     <button class="xp-card" type="button" aria-expanded="false">
       <span class="xp-front"><span class="xp-name">University Union</span><span class="xp-desc">Syracuse&rsquo;s student concert &amp; events org</span></span>
-      <span class="xp-back"><span class="xp-rel">Leadership</span><span class="xp-stat"><b>2.05M</b> views</span><span class="xp-what">Social strategy for Juice Jam, Block Party &amp; more</span></span>
+      <span class="xp-back"><span class="xp-rel">Leadership</span><span class="xp-stat"><b>2.05M</b> views</span><span class="xp-what">Ran social for Syracuse&rsquo;s biggest concerts, including Juice Jam &amp; Block Party. Led a team of student creators and grew TikTok 59%.</span></span>
     </button>
     <button class="xp-card" type="button" aria-expanded="false">
       <span class="xp-front"><span class="xp-name">Nike EYBL</span><span class="xp-desc">Nike Elite Youth Basketball League</span></span>
-      <span class="xp-back"><span class="xp-rel">Freelance</span><span class="xp-stat"><b>230K+</b> views</span><span class="xp-what">Branded content with Gatorade &amp; SportsCenter Next</span></span>
+      <span class="xp-back"><span class="xp-rel">Freelance</span><span class="xp-stat"><b>230K+</b> views</span><span class="xp-what">Shot nationally broadcast games between ranked high school teams. Highlight clips posted on Nike EYBL&rsquo;s socials.</span></span>
     </button>
     <button class="xp-card" type="button" aria-expanded="false">
       <span class="xp-front"><span class="xp-name">Jordan Brand Classic</span><span class="xp-desc">Top high school teams in the country</span></span>
-      <span class="xp-back"><span class="xp-rel">Freelance</span><span class="xp-what">Event coverage from concept to delivery</span></span>
+      <span class="xp-back"><span class="xp-rel">Freelance</span><span class="xp-what">Game and photo coverage.</span></span>
     </button>
     <button class="xp-card" type="button" aria-expanded="false">
       <span class="xp-front"><span class="xp-name">SportsCenter Next</span><span class="xp-desc">ESPN</span></span>
-      <span class="xp-back"><span class="xp-rel">Freelance</span><span class="xp-what">Branded short-form content</span></span>
+      <span class="xp-back"><span class="xp-rel">Freelance</span><span class="xp-what">Shot nationally broadcast games between ranked high school teams. Highlight clips posted on SportsCenter Next&rsquo;s socials.</span></span>
     </button>
     <button class="xp-card" type="button" aria-expanded="false">
       <span class="xp-front"><span class="xp-name">Gatorade</span><span class="xp-desc">Sports nutrition brand</span></span>
-      <span class="xp-back"><span class="xp-rel">Freelance</span><span class="xp-what">Branded short-form content</span></span>
+      <span class="xp-back"><span class="xp-rel">Freelance</span><span class="xp-what">Promo piece for Gatorade&rsquo;s DJ Khaled apparel collab, featuring some of the top high school programs.</span></span>
     </button>
     <button class="xp-card" type="button" aria-expanded="false">
       <span class="xp-front"><span class="xp-name">Syracuse Athletics</span><span class="xp-desc">Division I, ACC</span></span>
-      <span class="xp-back"><span class="xp-rel">In-House</span><span class="xp-stat"><b>266K+</b> views</span><span class="xp-what">28+ posts across every major program</span></span>
+      <span class="xp-back"><span class="xp-rel">In-House</span><span class="xp-stat"><b>266K+</b> views</span><span class="xp-what">Shot and edited content across Syracuse&rsquo;s Division I programs.</span></span>
     </button>
     <button class="xp-card" type="button" aria-expanded="false">
-      <span class="xp-front"><span class="xp-name">LuHi</span><span class="xp-desc">Long Island Lutheran athletics</span></span>
-      <span class="xp-back"><span class="xp-rel">Wes Way Client</span><span class="xp-what">Brand video &amp; athletics content</span></span>
+      <span class="xp-front"><span class="xp-name">LuHi</span><span class="xp-desc">Long Island Lutheran High School athletics</span></span>
+      <span class="xp-back"><span class="xp-rel">In-House</span><span class="xp-stat"><b>54K+</b> views</span><span class="xp-what">Creative Director for LuHi Summer Programs. Sole content creator for all photo &amp; video across Instagram &amp; TikTok.</span></span>
     </button>
   </div>
 </section>
@@ -1604,7 +1625,7 @@
       <div class="dest-row" role="row"><span class="d-name" role="cell">MLBPA<small>MLB Players Association</small></span><span class="d-dist" role="cell">318K</span></div>
       <div class="dest-row" role="row"><span class="d-name" role="cell">Syracuse Athletics</span><span class="d-dist" role="cell">266K</span></div>
       <div class="dest-row" role="row"><span class="d-name" role="cell">Nike EYBL &middot; Gatorade</span><span class="d-dist" role="cell">230K</span></div>
-      <div class="dest-row" role="row"><span class="d-name" role="cell">LuHi Summer Programs<small>Long Island Lutheran youth sports</small></span><span class="d-dist" role="cell">54K</span></div>
+      <div class="dest-row" role="row"><span class="d-name" role="cell">LuHi Summer Programs<small>Long Island Lutheran High School</small></span><span class="d-dist" role="cell">54K</span></div>
     </div>
     <div class="dest-total">
       <span class="d-name">All Routes</span>
@@ -1635,7 +1656,7 @@
         <p class="windex-meta"><span class="rel">Contract</span> Event Content &middot; Javits Center</p>
         <div class="cs-lines">
           <p class="cs-line"><b>The Job</b><span>Capture a four-day fan event packed with athletes and celebrities, fast enough to post while it was still happening.</span></p>
-          <p class="cs-line"><b>The Work</b><span>On-site coverage on the Sony FX3, cut into short-form social content for Instagram and TikTok.</span></p>
+          <p class="cs-line"><b>The Work</b><span>On-site coverage on iPhone and the Sony A7S III, cut into short-form social content for Instagram and TikTok.</span></p>
           <p class="cs-line"><b>Result</b><span>Content that generated 2M+ views, with a single video passing 2M on its own.</span></p>
         </div>
         <div class="windex-tags"><span>Event Coverage</span><span>Short-Form</span><span>Instagram</span><span>TikTok</span></div>
@@ -1655,10 +1676,10 @@
         <p class="windex-meta"><span class="rel">In-House</span> Athlete Content &middot; MLB &amp; MiLB</p>
         <div class="cs-lines">
           <p class="cs-line"><b>The Job</b><span>Communications &amp; digital media internship: put MLB and MiLB players front and center across the Players Association's social channels.</span></p>
-          <p class="cs-line"><b>The Work</b><span>On-site player interviews at stadiums, turned into same-day short-form for Instagram, X, and TikTok.</span></p>
+          <p class="cs-line"><b>The Work</b><span>Athlete-focused videos and graphics, including an on-site player interview, turned into short-form for Instagram and X.</span></p>
           <p class="cs-line"><b>Result</b><span>318K+ views and 27.7K likes across 17+ posts in a single summer.</span></p>
         </div>
-        <div class="windex-tags"><span>Athlete Content</span><span>Interviews</span><span>Instagram</span><span>X</span><span>TikTok</span></div>
+        <div class="windex-tags"><span>Athlete Content</span><span>Graphics</span><span>Instagram</span><span>X</span></div>
       </div>
       <div class="windex-stats">
         <div class="windex-stat"><b>318K+</b><i>Views</i></div>
@@ -1698,9 +1719,9 @@
         <h3 class="windex-name">Nike EYBL, Gatorade &amp; SportsCenter Next</h3>
         <p class="windex-meta"><span class="rel">Freelance</span> Branded Short-Form &middot; Basketball</p>
         <div class="cs-lines">
-          <p class="cs-line"><b>The Job</b><span>Branded content from national showcase stages like the Jordan Brand Classic and the Nike EYBL circuit.</span></p>
-          <p class="cs-line"><b>The Work</b><span>Coverage of the Jordan Brand Classic and State Championships, from concept through delivery, on every deadline.</span></p>
-          <p class="cs-line"><b>Result</b><span>230K+ views across branded posts.</span></p>
+          <p class="cs-line"><b>The Job</b><span>Content from some of the biggest stages in high school basketball, plus a Gatorade brand campaign.</span></p>
+          <p class="cs-line"><b>The Work</b><span>Nationally broadcast games between ranked teams with highlight clips for Nike EYBL and SportsCenter Next&rsquo;s socials, game and photo coverage at the Jordan Brand Classic, and a Gatorade promo for its DJ Khaled apparel collab.</span></p>
+          <p class="cs-line"><b>Result</b><span>230K+ views across posts.</span></p>
         </div>
         <div class="windex-tags"><span>Branded Content</span><span>Event Coverage</span><span>Instagram</span></div>
       </div>
@@ -1773,20 +1794,30 @@
   </div>
 </section>
 
-<!-- ============ ON THE FEED ============ -->
-<section id="instagram">
+<!-- ============ RECENT WORK ============ -->
+<!-- Needs recent-1.mp4 / recent-2.mp4 / recent-3.mp4 (+ matching .jpg stills) next to this file.
+     Any clip that's missing hides itself; if none are there, the whole section stays hidden. -->
+<section id="recent" class="rw-section">
   <div class="ig-head">
     <div class="exit-sign" style="margin-bottom:0;">
       <span class="exit-no">Exit 07</span>
-      <span class="exit-name">On The Feed</span>
+      <span class="exit-name">Recent Work</span>
     </div>
     <a href="https://www.instagram.com/wwaycreative/" target="_blank" rel="noopener" class="sign-btn">Follow @wwaycreative &#8599;</a>
   </div>
-  <div class="ig-grid">
-    <div class="ig-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DU1r6nIkiml/" data-instgrm-version="14" style="background:#131417; border:0; margin:0; padding:0; width:100%;"></blockquote></div>
-    <div class="ig-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C2XvD4IOA0_/" data-instgrm-version="14" style="background:#131417; border:0; margin:0; padding:0; width:100%;"></blockquote></div>
-    <div class="ig-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Da3hxm5RXyA/" data-instgrm-version="14" style="background:#131417; border:0; margin:0; padding:0; width:100%;"></blockquote></div>
-    <div class="ig-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C8sJT3qucZK/" data-instgrm-version="14" style="background:#131417; border:0; margin:0; padding:0; width:100%;"></blockquote></div>
+  <div class="rw-grid">
+    <a class="rw-card" href="https://www.instagram.com/p/DdpPIvUuvOn/" target="_blank" rel="noopener" aria-label="Watch recent work 1 on Instagram">
+      <video muted loop playsinline preload="none" src="recent-1.mp4" poster="recent-1.jpg"></video>
+      <span class="rw-go">Watch on Instagram &#8599;</span>
+    </a>
+    <a class="rw-card" href="https://www.instagram.com/p/DcMbci4pVP4/" target="_blank" rel="noopener" aria-label="Watch recent work 2 on Instagram">
+      <video muted loop playsinline preload="none" src="recent-2.mp4" poster="recent-2.jpg"></video>
+      <span class="rw-go">Watch on Instagram &#8599;</span>
+    </a>
+    <a class="rw-card" href="https://www.instagram.com/p/Dc_KxfsB2a8/" target="_blank" rel="noopener" aria-label="Watch recent work 3 on Instagram">
+      <video muted loop playsinline preload="none" src="recent-3.mp4" poster="recent-3.jpg"></video>
+      <span class="rw-go">Watch on Instagram &#8599;</span>
+    </a>
   </div>
 </section>
 
@@ -1807,7 +1838,7 @@
       <p class="founder-lead">I'm Jamien Petty, a New York producer and Syracuse Newhouse grad. The camera is just how I tell the story.</p>
       <p>For the last four years I've told stories at the collegiate and professional level: on the sidelines for Syracuse Athletics, in MLB stadiums with the Players Association, and on the floor at Fanatics Fest. I've seen what a full content team can do for a brand, and how out of reach that level feels for everyone who doesn't have one.</p>
       <p>That's why I started Wes Way. Every team, artist, and brand deserves content with that same prestige, without having to hire a full-time team to get it. You bring the story. We'll make sure people feel it.</p>
-      <p class="founder-sig">One Way. Wes Way.<span>Jamien Petty, Founder</span></p>
+      <p class="founder-sig">One Way. Wes Way.<span>Jamien Petty, Founder &middot; Est. 2026, building on freelance work since 2021</span></p>
     </div>
   </div>
 </section>
@@ -1912,36 +1943,27 @@
     <a href="https://www.instagram.com/wwaycreative/" target="_blank" rel="noopener">Instagram</a>
     <a href="#contact">Contact</a>
   </div>
+  <p class="footer-est">Est. 2026 &middot; Building on freelance work since 2021</p>
   <p class="footer-legal">&copy; 2026 Wes Way Creative &middot; New York</p>
 </footer>
 
 <script>
-  // Hero background: use hero.mp4 if it's there, otherwise fall back to the YouTube reel (muted, looping)
+  // Hero background video: the still frame shows until the video is actually playing,
+  // and again whenever the browser pauses it (tab switch, Low Power Mode) — so no play button ever shows.
   (function () {
-    var media = document.getElementById('heroMedia');
     var video = document.getElementById('heroVideo');
-    var swapped = false;
-    function useYouTube() {
-      if (swapped) return; swapped = true;
-      var id = '1HHDl5I2n6E';
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3';
-      f.allow = 'autoplay; encrypted-media; picture-in-picture';
-      f.title = 'Wes Way Creative reel (background)';
-      f.tabIndex = -1;
-      media.replaceChildren(f);
-    }
-    var src = video.querySelector('source');
-    src.addEventListener('error', useYouTube);
-    video.addEventListener('error', useYouTube);
-    if (video.networkState === 3) useYouTube();
-    // Respect reduced motion: pause the loop
+    if (!video) return;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduce) { video.removeAttribute('autoplay'); video.pause(); return; }
-    video.muted = true;
+    video.muted = true; video.defaultMuted = true;
+    function tryPlay() { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
     video.addEventListener('playing', function () { video.classList.add('is-playing'); });
-    var p = video.play && video.play();
-    if (p && p.catch) p.catch(function () { /* autoplay blocked (e.g. Low Power Mode): keep the still frame */ });
+    video.addEventListener('pause', function () { video.classList.remove('is-playing'); });
+    video.addEventListener('waiting', function () { video.classList.remove('is-playing'); });
+    video.addEventListener('canplay', function () { if (!document.hidden) tryPlay(); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) tryPlay(); });
+    window.addEventListener('pageshow', tryPlay);
+    tryPlay();
   })();
 
 
@@ -1967,11 +1989,12 @@
     function run(el) {
       var m = el.dataset.final.match(re); if (!m) return;
       var raw = m[2], target = parseFloat(raw.replace(/,/g, '')), dec = (raw.split('.')[1] || '').length, comma = raw.indexOf(',') > -1;
-      var dur = 1600, t0 = null;
+      var dur = 3000, t0 = null;
       function step(ts) {
         if (!t0) t0 = ts;
-        var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(2, -10 * p);
-        el.textContent = m[1] + fmt(target * (p === 1 ? 1 : e), dec, comma) + m[3] + m[4];
+        var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+        var d = (m[3] && dec === 0) ? 1 : dec; /* show a decimal while 5M+ etc. climb */
+        el.textContent = m[1] + fmt(target * (p === 1 ? 1 : e), p === 1 ? dec : d, comma) + m[3] + m[4];
         if (p < 1) requestAnimationFrame(step); else el.textContent = el.dataset.final;
       }
       requestAnimationFrame(step);
@@ -1987,6 +2010,29 @@
       el.textContent = m[1] + (0).toFixed((m[2].split('.')[1] || '').length) + m[3] + m[4];
       io.observe(el);
     });
+  })();
+
+
+  // Recent Work: play clips only while on screen; hide any clip that isn't uploaded yet
+  (function () {
+    var sec = document.getElementById('recent'); if (!sec) return;
+    var cards = [].slice.call(sec.querySelectorAll('.rw-card'));
+    function check() { if (cards.every(function (c) { return c.classList.contains('is-missing'); })) sec.classList.add('is-empty'); }
+    cards.forEach(function (c) {
+      var v = c.querySelector('video');
+      v.muted = true;
+      v.addEventListener('error', function () { c.classList.add('is-missing'); check(); });
+      fetch(v.getAttribute('src'), { method: 'HEAD' }).then(function (r) { if (!r.ok) { c.classList.add('is-missing'); check(); } }).catch(function () {});
+    });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target.querySelector('video');
+        if (en.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.4 });
+    cards.forEach(function (c) { io.observe(c); });
   })();
 
   // Package "Get a Quote" buttons pre-select the matching option in the inquiry form
@@ -2015,6 +2061,5 @@
     window.location.href = 'mailto:info@weswaycreative.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 </script>
-<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
