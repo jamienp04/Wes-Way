@@ -1376,6 +1376,13 @@
     .footer-note { max-width: 520px; font-family: var(--body); font-size: 0.74rem; line-height: 1.55; color: var(--grey); }
 
     .stats-note { margin-top: 0.7rem; max-width: 460px; font-family: var(--body); font-size: 0.74rem; line-height: 1.45; color: rgba(244,244,240,0.72); }
+
+    /* Icons drawn in CSS/SVG so phones don't swap them for emoji */
+    .ico-arr { width: 0.78em; height: 0.78em; margin-left: 0.4em; vertical-align: -0.02em; display: inline-block; }
+    .ticker span.dot {
+      display: inline-block; width: 0; height: 0; align-self: center; opacity: 0.45;
+      border-top: 0.32rem solid transparent; border-bottom: 0.32rem solid transparent; border-left: 0.5rem solid #fff;
+    }
   </style>
 </head>
 <body>
@@ -1416,24 +1423,24 @@
   </nav>
   <div class="ticker-wrap" aria-hidden="true">
     <div class="ticker">
-      <span>One Way. Wes Way.</span><span class="dot">&#9654;</span>
-      <span>Game Coverage</span><span class="dot">&#9654;</span>
-      <span>Highlight Reels</span><span class="dot">&#9654;</span>
-      <span>Live Events</span><span class="dot">&#9654;</span>
-      <span>Artist &amp; Talent Content</span><span class="dot">&#9654;</span><span>Brand Films</span><span class="dot">&#9654;</span>
-      <span>Photography</span><span class="dot">&#9654;</span>
-      <span>Social Strategy</span><span class="dot">&#9654;</span>
-      <span>Monthly Retainers</span><span class="dot">&#9654;</span>
-      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot">&#9654;</span>
-      <span>One Way. Wes Way.</span><span class="dot">&#9654;</span>
-      <span>Game Coverage</span><span class="dot">&#9654;</span>
-      <span>Highlight Reels</span><span class="dot">&#9654;</span>
-      <span>Live Events</span><span class="dot">&#9654;</span>
-      <span>Artist &amp; Talent Content</span><span class="dot">&#9654;</span><span>Brand Films</span><span class="dot">&#9654;</span>
-      <span>Photography</span><span class="dot">&#9654;</span>
-      <span>Social Strategy</span><span class="dot">&#9654;</span>
-      <span>Monthly Retainers</span><span class="dot">&#9654;</span>
-      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot">&#9654;</span>
+      <span>One Way. Wes Way.</span><span class="dot" aria-hidden="true"></span>
+      <span>Game Coverage</span><span class="dot" aria-hidden="true"></span>
+      <span>Highlight Reels</span><span class="dot" aria-hidden="true"></span>
+      <span>Live Events</span><span class="dot" aria-hidden="true"></span>
+      <span>Artist &amp; Talent Content</span><span class="dot" aria-hidden="true"></span><span>Brand Films</span><span class="dot" aria-hidden="true"></span>
+      <span>Photography</span><span class="dot" aria-hidden="true"></span>
+      <span>Social Strategy</span><span class="dot" aria-hidden="true"></span>
+      <span>Monthly Retainers</span><span class="dot" aria-hidden="true"></span>
+      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot" aria-hidden="true"></span>
+      <span>One Way. Wes Way.</span><span class="dot" aria-hidden="true"></span>
+      <span>Game Coverage</span><span class="dot" aria-hidden="true"></span>
+      <span>Highlight Reels</span><span class="dot" aria-hidden="true"></span>
+      <span>Live Events</span><span class="dot" aria-hidden="true"></span>
+      <span>Artist &amp; Talent Content</span><span class="dot" aria-hidden="true"></span><span>Brand Films</span><span class="dot" aria-hidden="true"></span>
+      <span>Photography</span><span class="dot" aria-hidden="true"></span>
+      <span>Social Strategy</span><span class="dot" aria-hidden="true"></span>
+      <span>Monthly Retainers</span><span class="dot" aria-hidden="true"></span>
+      <span>Now Booking &middot; NYC &amp; Long Island</span><span class="dot" aria-hidden="true"></span>
     </div>
   </div>
 </header>
@@ -1775,7 +1782,7 @@
       <span class="exit-no">Exit 06</span>
       <span class="exit-name">Photography</span>
     </div>
-    <a href="https://www.instagram.com/wwaycreative/" target="_blank" rel="noopener" class="sign-btn">@wwaycreative &#8599;</a>
+    <a href="https://www.instagram.com/wwaycreative/" target="_blank" rel="noopener" class="sign-btn">@wwaycreative<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
   </div>
   <p class="photo-note">Shot by founder Jamien Petty before Wes Way Creative, while working in-house and freelance.</p>
   <div class="photo-grid">
@@ -1806,20 +1813,20 @@
       <span class="exit-no">Exit 07</span>
       <span class="exit-name">Recent Work</span>
     </div>
-    <a href="https://www.instagram.com/wwaycreative/" target="_blank" rel="noopener" class="sign-btn">Follow @wwaycreative &#8599;</a>
+    <a href="https://www.instagram.com/wwaycreative/" target="_blank" rel="noopener" class="sign-btn">Follow @wwaycreative<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
   </div>
   <div class="rw-grid">
     <a class="rw-card" href="https://www.instagram.com/p/DdpPIvUuvOn/" target="_blank" rel="noopener" aria-label="Watch recent work 1 on Instagram">
       <video muted loop playsinline preload="metadata" src="recent-1.mp4" poster="recent-1.jpg"></video>
-      <span class="rw-go">Watch on Instagram &#8599;</span>
+      <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
     </a>
     <a class="rw-card" href="https://www.instagram.com/p/DcMbci4pVP4/" target="_blank" rel="noopener" aria-label="Watch recent work 2 on Instagram">
       <video muted loop playsinline preload="metadata" src="recent-2.mp4" poster="recent-2.jpg"></video>
-      <span class="rw-go">Watch on Instagram &#8599;</span>
+      <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
     </a>
     <a class="rw-card" href="https://www.instagram.com/p/Dc_KxfsB2a8/" target="_blank" rel="noopener" aria-label="Watch recent work 3 on Instagram">
       <video muted loop playsinline preload="metadata" src="recent-3.mp4" poster="recent-3.jpg"></video>
-      <span class="rw-go">Watch on Instagram &#8599;</span>
+      <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
     </a>
   </div>
 </section>
