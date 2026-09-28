@@ -1408,7 +1408,8 @@
     .page-head.has-bg { border-bottom: 0; }
     @keyframes bgIn { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1); } }
     @keyframes riseIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-    .page-head.has-bg::before { animation: bgIn 1.4s cubic-bezier(.2,.7,.2,1) both; }
+    .page-head.has-bg::before { opacity: 0; }
+    .page-head.has-bg.bg-ready::before { animation: bgIn 1.4s cubic-bezier(.2,.7,.2,1) both; }
     .page-head > *:not(.ph-sign) { animation: riseIn .9s .25s cubic-bezier(.2,.7,.2,1) both; }
     .page-head .ph-sign { animation: riseIn .9s .5s both; }
     .about-head { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: end; border-bottom: 0; padding-bottom: 2rem; }
@@ -1731,6 +1732,17 @@
 </footer>
 
 <script>
+  // Page banners: fade in once the image has actually loaded
+  (function () {
+    document.querySelectorAll('.page-head.has-bg').forEach(function (el) {
+      var m = (el.getAttribute('style') || '').match(/url\(([^)]+)\)/);
+      var done = function () { el.classList.add('bg-ready'); };
+      if (!m) return done();
+      var img = new Image(); img.onload = done; img.onerror = done; img.src = m[1];
+      if (img.complete) done();
+      setTimeout(done, 4000);
+    });
+  })();
   // Mobile menu
   (function () {
     var hd = document.querySelector('.site-header'), btn = document.querySelector('.nav-toggle');
