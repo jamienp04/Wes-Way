@@ -1348,8 +1348,16 @@
     @media (max-width: 340px) { .xp-grid { grid-template-columns: 1fr; } .xp-card:last-child { grid-column: auto; } }
 
     /* ============ RECENT WORK ============ */
-    .rw-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 300px)); justify-content: center; gap: 1.25rem; }
-    .rw-card { position: relative; display: block; aspect-ratio: 9 / 16; border-radius: 10px; overflow: hidden; background: var(--night-2); border: 1px solid var(--border); }
+    .rw-wrap { position: relative; }
+    .rw-grid {
+      --per: 4; --gap: 1.25rem;
+      display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - (var(--per) - 1) * var(--gap)) / var(--per));
+      gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+      overscroll-behavior-x: contain; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    .rw-grid::-webkit-scrollbar { display: none; }
+    .rw-grid:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .rw-card { position: relative; display: block; aspect-ratio: 9 / 16; border-radius: 10px; overflow: hidden; background: var(--night-2); border: 1px solid var(--border); scroll-snap-align: start; }
     .rw-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
     .rw-card video::-webkit-media-controls, .rw-card video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
     .rw-go {
@@ -1361,9 +1369,26 @@
     @media (hover: none) { .rw-go { opacity: 1; transform: none; } }
     .rw-card.is-missing { display: none; }
     .rw-section.is-empty { display: none; }
+    .rw-arrow {
+      position: absolute; top: 50%; z-index: 2; width: 48px; height: 48px; margin-top: -24px; padding: 0;
+      display: grid; place-items: center; cursor: pointer; color: #fff;
+      background: var(--green); border: 3px solid #fff; border-radius: 8px; box-shadow: 0 0 0 3px var(--green), 0 8px 24px rgba(0,0,0,.45);
+      transition: opacity .2s, transform .2s;
+    }
+    .rw-arrow svg { width: 22px; height: 22px; }
+    .rw-arrow:hover { transform: scale(1.06); }
+    .rw-arrow:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .rw-arrow[disabled] { opacity: 0; pointer-events: none; }
+    .rw-prev { left: -24px; }
+    .rw-next { right: -24px; }
+    .rw-wrap.no-scroll .rw-arrow { display: none; }
+    @media (max-width: 1000px) { .rw-grid { --per: 3; } }
     @media (max-width: 700px) {
-      .rw-grid { grid-template-columns: repeat(4, 72%); justify-content: start; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 0.5rem; }
-      .rw-card { scroll-snap-align: start; }
+      .rw-grid { --per: 2.15; --gap: 0.75rem; }
+      .rw-arrow { width: 38px; height: 38px; margin-top: -19px; border-width: 2px; box-shadow: 0 0 0 2px var(--green), 0 6px 18px rgba(0,0,0,.45); }
+      .rw-arrow svg { width: 18px; height: 18px; }
+      .rw-prev { left: -8px; } .rw-next { right: -8px; }
+      .rw-go { left: 8px; bottom: 8px; font-size: 0.6rem; padding: 0.35rem 0.5rem 0.28rem; }
     }
 
     /* Est. line */
@@ -1625,7 +1650,7 @@
 </section>
 
 <!-- ============ RECENT WORK ============ -->
-<!-- Needs recent-1.mp4 / recent-2.mp4 / recent-3.mp4 / recent-4.mp4 (+ matching .jpg stills) next to this file.
+<!-- Needs recent-1.mp4 through recent-7.mp4 (+ matching .jpg stills) next to this file.
      Any clip that's missing hides itself; if none are there, the whole section stays hidden. -->
 <section id="recent" class="rw-section">
   <div class="ig-head">
@@ -1635,23 +1660,39 @@
     </div>
     <a href="https://www.instagram.com/wwaycreative/" target="_blank" rel="noopener" class="sign-btn">Follow @wwaycreative<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
   </div>
-  <div class="rw-grid">
-    <a class="rw-card" href="https://www.instagram.com/p/DdpPIvUuvOn/" target="_blank" rel="noopener" aria-label="Watch recent work 1 on Instagram">
-      <video muted loop playsinline preload="metadata" src="/recent-1.mp4" poster="/recent-1.jpg"></video>
-      <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
-    </a>
-    <a class="rw-card" href="https://www.instagram.com/p/DcMbci4pVP4/" target="_blank" rel="noopener" aria-label="Watch recent work 2 on Instagram">
-      <video muted loop playsinline preload="metadata" src="/recent-2.mp4" poster="/recent-2.jpg"></video>
-      <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
-    </a>
-    <a class="rw-card" href="https://www.instagram.com/p/Dc_KxfsB2a8/" target="_blank" rel="noopener" aria-label="Watch recent work 3 on Instagram">
-      <video muted loop playsinline preload="metadata" src="/recent-3.mp4" poster="/recent-3.jpg"></video>
-      <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
-    </a>
-    <a class="rw-card" href="https://www.instagram.com/p/DeH3YltBFvh/" target="_blank" rel="noopener" aria-label="Watch recent work 4 on Instagram">
-      <video muted loop playsinline preload="metadata" src="/recent-4.mp4" poster="/recent-4.jpg"></video>
-      <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
-    </a>
+  <div class="rw-wrap">
+    <button class="rw-arrow rw-prev" type="button" aria-label="Previous videos" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></svg></button>
+    <div class="rw-grid" tabindex="0" aria-label="Recent work videos">
+      <a class="rw-card" href="https://www.instagram.com/p/Der58tfhTbQ/" target="_blank" rel="noopener" aria-label="Pep rally recap">
+        <video muted loop playsinline preload="metadata" src="/recent-5.mp4" poster="/recent-5.jpg"></video>
+        <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+      </a>
+      <a class="rw-card" href="https://www.instagram.com/p/DevHlg7vqOK/" target="_blank" rel="noopener" aria-label="Homecoming dance and cheer reel">
+        <video muted loop playsinline preload="metadata" src="/recent-6.mp4" poster="/recent-6.jpg"></video>
+        <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+      </a>
+      <a class="rw-card" href="https://www.instagram.com/p/DeuKzHzMqmI/" target="_blank" rel="noopener" aria-label="Baptism Sunday">
+        <video muted loop playsinline preload="metadata" src="/recent-7.mp4" poster="/recent-7.jpg"></video>
+        <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+      </a>
+      <a class="rw-card" href="https://www.instagram.com/p/DeH3YltBFvh/" target="_blank" rel="noopener" aria-label="Athlete Protocol training">
+        <video muted loop playsinline preload="metadata" src="/recent-4.mp4" poster="/recent-4.jpg"></video>
+        <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+      </a>
+      <a class="rw-card" href="https://www.instagram.com/p/DdpPIvUuvOn/" target="_blank" rel="noopener" aria-label="Recent work 1">
+        <video muted loop playsinline preload="metadata" src="/recent-1.mp4" poster="/recent-1.jpg"></video>
+        <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+      </a>
+      <a class="rw-card" href="https://www.instagram.com/p/DcMbci4pVP4/" target="_blank" rel="noopener" aria-label="Recent work 2">
+        <video muted loop playsinline preload="metadata" src="/recent-2.mp4" poster="/recent-2.jpg"></video>
+        <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+      </a>
+      <a class="rw-card" href="https://www.instagram.com/p/Dc_KxfsB2a8/" target="_blank" rel="noopener" aria-label="Recent work 3">
+        <video muted loop playsinline preload="metadata" src="/recent-3.mp4" poster="/recent-3.jpg"></video>
+        <span class="rw-go">Watch on Instagram<svg class="ico-arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+      </a>
+    </div>
+    <button class="rw-arrow rw-next" type="button" aria-label="More videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></svg></button>
   </div>
 </section>
 
@@ -1853,10 +1894,37 @@
     }, { threshold: 0.35 });
     // start buffering a little before the section scrolls in, so playback starts smooth
     var pre = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.querySelectorAll('video').forEach(function (v) { v.preload = 'auto'; v.load(); }); pre.disconnect(); } });
+      entries.forEach(function (en) { if (en.isIntersecting) { [].slice.call(en.target.querySelectorAll('video'), 0, 4).forEach(function (v) { v.preload = 'auto'; v.load(); }); pre.disconnect(); } });
     }, { rootMargin: '600px 0px' });
     pre.observe(sec);
     cards.forEach(function (c) { io.observe(c); });
+  })();
+
+  // Recent Work arrows: page through the row; hide an arrow at either end
+  (function () {
+    var wrap = document.querySelector('.rw-wrap'); if (!wrap) return;
+    var row = wrap.querySelector('.rw-grid'), prev = wrap.querySelector('.rw-prev'), next = wrap.querySelector('.rw-next');
+    function step() {
+      var c = row.querySelector('.rw-card:not(.is-missing)'); if (!c) return row.clientWidth;
+      var gap = parseFloat(getComputedStyle(row).columnGap) || 0, w = c.getBoundingClientRect().width + gap;
+      return Math.max(w, Math.floor((row.clientWidth + gap) / w) * w);
+    }
+    function update() {
+      var max = row.scrollWidth - row.clientWidth;
+      wrap.classList.toggle('no-scroll', max < 4);
+      prev.disabled = row.scrollLeft < 4;
+      next.disabled = row.scrollLeft > max - 4;
+    }
+    prev.addEventListener('click', function () { row.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { row.scrollBy({ left: step(), behavior: 'smooth' }); });
+    row.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+    });
+    row.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    new MutationObserver(update).observe(row, { subtree: true, attributes: true, attributeFilter: ['class'] });
+    update();
   })();
 
   // Package "Get a Quote" buttons pre-select the matching option in the inquiry form
