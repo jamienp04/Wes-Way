@@ -30,15 +30,10 @@
     load(); if (mq.addEventListener) mq.addEventListener('change', load);
   })();
 
-  // recent work: arrows, play only what's on screen, hide clips that aren't uploaded
+  // recent work row: arrows
   (function () {
     var row = document.querySelector('.reel-row'); if (!row) return;
     var prev = document.querySelector('.arrow.prev'), next = document.querySelector('.arrow.next');
-    var cards = [].slice.call(row.querySelectorAll('.reel'));
-    cards.forEach(function (c) {
-      var v = c.querySelector('video'); v.muted = true;
-      v.addEventListener('error', function () { c.hidden = true; update(); });
-    });
     function step() {
       var c = row.querySelector('.reel:not([hidden])'); if (!c) return row.clientWidth;
       var gap = parseFloat(getComputedStyle(row).columnGap) || 0, w = c.getBoundingClientRect().width + gap;
@@ -56,12 +51,66 @@
     });
     row.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update); update();
+    window.__rowUpdate = update;
+  })();
+
+  // reels: everything on screen loops silently. Hover (or tap on phones) a video to focus it:
+  // the others pause, and the speaker button turns its sound on. Sound stays on for the next
+  // video you hover until you turn it off.
+  (function () {
+    var cards = [].slice.call(document.querySelectorAll('.reel')); if (!cards.length) return;
+    var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var active = null, soundOn = false, visible = new Set();
+    function vid(c) { return c.querySelector('video'); }
+    function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () { v.muted = true; v.play().catch(function () {}); }); }
+    function setBtn(c) {
+      var b = c.querySelector('.reel-sound'); if (!b) return;
+      var on = active === c && soundOn;
+      b.setAttribute('aria-pressed', on); b.setAttribute('aria-label', on ? 'Turn sound off' : 'Turn sound on');
+      c.classList.toggle('sound-on', on);
+    }
+    function focus(c) {
+      active = c;
+      cards.forEach(function (o) {
+        var v = vid(o);
+        if (o === c) { v.muted = !(soundOn && o.classList.contains('has-audio')); if (v.preload !== 'auto') v.preload = 'auto'; play(v); }
+        else { v.muted = true; v.pause(); }
+        o.classList.toggle('is-active', o === c); o.classList.toggle('is-dim', o !== c);
+        setBtn(o);
+      });
+    }
+    function release() {
+      active = null;
+      cards.forEach(function (o) {
+        var v = vid(o); v.muted = true; o.classList.remove('is-active', 'is-dim'); setBtn(o);
+        if (visible.has(o)) play(v); else v.pause();
+      });
+    }
+    cards.forEach(function (c) {
+      var v = vid(c); v.muted = true;
+      v.addEventListener('error', function () { c.hidden = true; if (window.__rowUpdate) window.__rowUpdate(); });
+      var b = c.querySelector('.reel-sound');
+      if (b) b.addEventListener('click', function (e) {
+        e.stopPropagation(); e.preventDefault();
+        soundOn = !(active === c && soundOn);
+        if (active !== c || !canHover) focus(c); else { v.muted = !soundOn; play(v); setBtn(c); }
+      });
+      if (canHover) {
+        c.addEventListener('mouseenter', function () { focus(c); });
+        c.addEventListener('mouseleave', function () { if (active === c) release(); });
+      } else {
+        c.addEventListener('click', function () {
+          if (active === c) { soundOn = !soundOn; v.muted = !(soundOn && c.classList.contains('has-audio')); setBtn(c); }
+          else { soundOn = c.classList.contains('has-audio'); focus(c); }
+        });
+      }
+    });
     if (!('IntersectionObserver' in window)) return;
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
-        var v = e.target.querySelector('video');
-        if (e.isIntersecting) { if (v.preload !== 'auto') { v.preload = 'auto'; } var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-        else v.pause();
+        var c = e.target, v = vid(c);
+        if (e.isIntersecting) { visible.add(c); if (!active) { if (v.preload !== 'auto') v.preload = 'auto'; play(v); } }
+        else { visible.delete(c); v.pause(); if (active === c) release(); }
       });
     }, { threshold: 0.4 });
     cards.forEach(function (c) { io.observe(c); });
